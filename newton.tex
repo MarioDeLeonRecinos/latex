@@ -6,6 +6,7 @@
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{mathtools}
 \usepackage{enumitem}
 \usepackage{comment}
 \usepackage[nottoc, notlot, notlof]{tocbibind}
@@ -18,6 +19,20 @@
 \fancyfoot[C]{\thepage}
 %\renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
 
 \parindent 0ex
 %\setlength{\parindent}{4em}
@@ -84,7 +99,8 @@ Suponemos que $p$ es una solucion de $G(x)=x$. Si existe un numero $\delta>0$ co
 
 \begin{enumerate}[label=(\roman*)]
 
-	\item $\partial g_i / \partial x_j$ sea continua en N
+	\item $\partial g_i / \partial x_j$ sea continua en $N_\delta=x|\quad \norm{x-p}$ para toda $i=1,2,...,n$ y toda $j=1,2,///,n;$
+	\item $\partial^2 g_i(x) / \partial x_j\partial x_k$ sea continua y $\abs{ \partial^2 g_i(x)/(\partial x_j\partial x_k)}\leq M$ para alguna constante M siempre que $x\in N_\delta$ para toda $i=1,2,...,n, j=1,2,...,n$ y toda $k=1,2,...,n;$ 
 
 \end{enumerate}
 
