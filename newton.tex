@@ -85,14 +85,19 @@ El problema computacional que se tiene a resolver es solucion de ecuaciones no l
 Para construir dicho algoritmo que lleve a una solucion del metodo de punto-fijo en un caso unidimensional, obtuvimos una funcion $\phi$ con las propiedades $$g(x)=x-\phi(x)f(x)$$ da una convergencia cuadratica en el punto fijo $p$ de la funcion $g$.De esta condicion el metodo de Newton evoluciono al escoger $\phi(x)=1/f'(x)$ asumiendo que $f'(x)\neq0$.\\
 
 Un enfoque similar in el caso $n$-dimensional implica una matriz
-\[
+
+\begin{equation}
+A=
 \begin{bmatrix}
     a_{11}       & a_{12} & \dots & a_{1n} \\
     a_{21}       & a_{22} & \dots & a_{2n} \\
     \vdots & \vdots & \ddots  & \vdots\\
     a_{n1}       & a_{n2} & \dots & a_{nn}
+    \label{matrix:A}    
 \end{bmatrix}
-\]
+\end{equation}
+
+
 donde cada una de las entradas $a_{ij}(x)$ es una funcion de $\mathbb{R}^n$ a $\mathbb{R}$ . Esto requiere que $A(x)$ sea encontrado para que $$\mathbf{G(x)=x-A(x)^{-1}F(x)}$$ genere una convergencia cuadratica para la solucion $\mathbf{F(x)=0}$, asumiendo que $A(x)$ es no singular en el punto fijo $\mathbf{p}$ de $\mathbf{G}$.\\
 
 Suponemos que $p$ es una solucion de $G(x)=x$. Si existe un numero $\delta>0$ con la propiedad que
@@ -101,8 +106,17 @@ Suponemos que $p$ es una solucion de $G(x)=x$. Si existe un numero $\delta>0$ co
 
 	\item $\partial g_i / \partial x_j$ sea continua en $N_\delta=x|\quad \norm{x-p}$ para toda $i=1,2,...,n$ y toda $j=1,2,///,n;$
 	\item $\partial^2 g_i(x) / \partial x_j\partial x_k$ sea continua y $\abs{ \partial^2 g_i(x)/(\partial x_j\partial x_k)}\leq M$ para alguna constante M siempre que $x\in N_\delta$ para toda $i=1,2,...,n, j=1,2,...,n$ y toda $k=1,2,...,n;$ 
+	\item $\partial g_i(p) /\partial x_k =0$ para toda $i=1,2,...,n$ y toda $k=1,2,...,n.$
 
 \end{enumerate}
+
+Entonces existe un numero $\hat{\delta}\leq \delta$ tal que la sucesion generada por $x^k=G(x^{k-1})$
+converge cuadraticamente a $p$ para cualquier eleccion de $x^0$ a condicion de que $\quad \norm{x^0-p}<\hat{\delta}$
+\begin{center}
+$\quad \norm{x^k-p}_\infty \leq \frac{n^2M}{2}\quad \norm{x^{k-1}-p}_\infty^2$ para toda k$\geq 1$
+\end{center}
+Para utilizar el teorema supongamos que $A(x)$ es una matriz de $n X n$ de funcio­nes de $\mathbb{R}^n$ a $\mathbb{R}$ en la forma de la ecuacion \ref{matrix:A}, cuyos elementos específicos se escoge­rán más adelante. Supongamos además que A(x) es no singular cerca de una solución p de F(x) = O , y denotemos con bv(x) el elemento de A(x) - 1 en el i-ésimo renglón y en la j-ésima columna.
+
 
 \subsection{Teoria}
 
