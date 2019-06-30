@@ -124,7 +124,33 @@ Para utilizar el teorema supongamos que $A(x)$ es una matriz de $n X n$ de funci
 \end{table}
 
 
+\section{Desarrollo del programa}
 
+\subsection{Algoritmo}
+sujeto a cambios
+Una vez el método de Newton ha sido adaptado para trabajar con $\mathbb{n}$ funciones y $\mathbb{n}$ variables de forma tal que el  
+sujeto a cambios
+El algoritmo empleado para resolver sistemas de ecuaciones no lineales con el método de Newton aun posee todas sus cualidades es decir la velocidad de convergencia del método no se vio afectada como resultado de adaptarlo al caso donde se ncesita trabajar con un espacio vectorial de funciones que mapeen $\mathbb{R}^3$ a $\mathbb{R}^3$
+
+
+\subsection{Pseudocódigo}
+El Pseudocódigo para el proyecto se divide en 3 bloques principales de codigo:
+\begin{enumerate}
+  \item Configuración de parametros
+  \item Bucle
+  \item Salida
+\end{enumerate}
+
+\subsubsection{Configuración de parametros}
+Durante la configuración de parametros el programa necesita recibir como entrada varias cosas, entre ellas estan el número  $n$ de incognitas y de funciones que se desea calcular, luego la precision deseada que luego servira para saber en que momento detener el programa. Finalmente se necesitaran las ecuaciones que deben ser solucionadas.
+
+\subsubsection{Bucle}
+Esta es la parte computacionalmente mas exigente del programa, en esta parte se necesitan calcular los siguientes valores
+\begin{itemize}
+  \item Matris Jacobiana de la iteración
+  \item El vector $F(\bar{X})$
+  \item Salida
+\end{itemize}
 \clearpage
 %\thispagestyle{empty}
 \bibliographystyle{plain}
