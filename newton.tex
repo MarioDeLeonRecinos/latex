@@ -1,0 +1,109 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage[none]{hyphenat}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{comment}
+\usepackage[nottoc, notlot, notlof]{tocbibind}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{\slshape\MakeUppercase{Método de Newton para sistemas no lineales}}
+%\fancyhead[R]{\slshape{Student Name}}
+\fancyfoot[C]{\thepage}
+%\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\parindent 0ex
+%\setlength{\parindent}{4em}
+%\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.5}
+
+\begin{document}
+\begin{titlepage}
+
+\begin{center}
+%\vspace*{1cm}
+\Large{\textbf{Analisis Numerico}}\\
+\Large{\textbf{Proyecto Final}}\\
+\vfill
+\line(1,0){500}\\[1mm]
+
+\huge{\textbf{Método de Newton para sistemas no lineales}}\\[3mm]
+\Large{\textbf{- Implementacion y teoria del metodo -}}\\[1mm]
+
+\line(1,0){500}\\
+\vfill
+
+Mario Cecilio De León Recinos 00353715\\
+Yury Alejandro Rivera Quintanilla 00088116\\
+\today\\
+
+\end{center}
+
+\end{titlepage}
+
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+\setcounter{page}{1}
+
+\section{Introduccion}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet sed nunc ac egestas. Vestibulum erat risus, accumsan quis condimentum vel, sollicitudin vel purus. Suspendisse id metus sollicitudin, pulvinar justo non, aliquam nulla. Nam vehicula velit nibh, placerat maximus ligula finibus eu. Morbi molestie lectus ac tortor rhoncus pellentesque. Vestibulum eget nibh ultrices, maximus lacus a, pharetra velit. Mauris laoreet interdum diam vel mattis. Donec vestibulum nibh enim, nec malesuada arcu sodales et. Pellentesque pharetra euismod est, quis faucibus est maximus et. Maecenas feugiat ac tortor id iaculis. Ut commodo ac erat quis finibus\footnote{Ejemplo}.
+\clearpage
+
+\section{Definiciones}
+
+El problema computacional que se tiene a resolver es solucion de ecuaciones no lineales, el cual sera resuelto con el metodo de newton para ecuaciones no lineales. Este metodo tiene un procedimiento algoritmico para efectuar la transformacion en una situacion mas general.\\
+
+Para construir dicho algoritmo que lleve a una solucion del metodo de punto-fijo en un caso unidimensional, obtuvimos una funcion $\phi$ con las propiedades $$g(x)=x-\phi(x)f(x)$$ da una convergencia cuadratica en el punto fijo $p$ de la funcion $g$.De esta condicion el metodo de Newton evoluciono al escoger $\phi(x)=1/f'(x)$ asumiendo que $f'(x)\neq0$.\\
+
+Un enfoque similar in el caso $n$-dimensional implica una matriz
+\[
+\begin{bmatrix}
+    a_{11}       & a_{12} & \dots & a_{1n} \\
+    a_{21}       & a_{22} & \dots & a_{2n} \\
+    \vdots & \vdots & \ddots  & \vdots\\
+    a_{n1}       & a_{n2} & \dots & a_{nn}
+\end{bmatrix}
+\]
+donde cada una de las entradas $a_{ij}(x)$ es una funcion de $\mathbb{R}^n$ a $\mathbb{R}$ . Esto requiere que $A(x)$ sea encontrado para que $$\mathbf{G(x)=x-A(x)^{-1}F(x)}$$ genere una convergencia cuadratica para la solucion $\mathbf{F(x)=0}$, asumiendo que $A(x)$ es no singular en el punto fijo $\mathbf{p}$ de $\mathbf{G}$.\\
+
+Suponemos que $p$ es una solucion de $G(x)=x$. Si existe un numero $\delta>0$ con la propiedad que
+
+\begin{enumerate}[label=(\roman*)]
+
+	\item $\partial g_i / \partial x_j$ sea continua en N
+
+\end{enumerate}
+
+\subsection{Teoria}
+
+Maecenas at nulla ac est vulputate iaculis. In pulvinar tristique quam nec posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam bibendum, eros non varius tempus, metus sem mollis risus, quis scelerisque arcu lectus at felis. Praesent a fermentum lectus, ut volutpat turpis. Ut condimentum, velit et bibendum fermentum, lorem nibh luctus nisl, sit amet suscipit velit tortor non purus. Nam ut massa erat. Phasellus in ex in nisl tincidunt malesuada. Pellentesque cursus, erat eu sollicitudin fermentum, nisl lorem eleifend augue, sit amet ornare felis felis nec enim. Suspendisse posuere dignissim vestibulum. Cras eu eros et lacus pellentesque hendrerit. Sed ut nunc ac massa dignissim ultricies. Cras efficitur odio eu tempor vulputate. Vivamus ullamcorper libero ex, ac rhoncus enim sagittis sit amet(mirar tabla \ref{tab:data1}).
+
+\begin{table}[H]
+	\centering
+		\begin{tabular}{|c|c|c|c|}\hline
+		$x$ &0&1&2\\ \hline
+		$f(x)$ &3&6&9\\ \hline		
+		\end{tabular}
+	\caption{Caption goes here}
+	\label{tab:data1}
+\end{table}
+
+
+
+\clearpage
+%\thispagestyle{empty}
+\bibliographystyle{plain}
+\nocite{*}
+\bibliography{bibliografia}
+
+\end{document}
