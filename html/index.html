@@ -11,7 +11,8 @@
     <title>Newton No Lineal</title>
 
     <script src="https://unpkg.com/mathjs@6.0.2/dist/math.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML.js"></script>
 
 </head>
 
@@ -21,13 +22,15 @@
         <h1>Newton No Lineal</h1>
         <br>
         <div class="container alert alert-primary">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control form-rounded" placeholder="Numero de ecuaciones que se evaluaran"
-                    aria-label="Recipient's username" aria-describedby="basic-addon2" id="nvalue">
-                <div class="input-group-append">
-                    <button class="btn btn-dark  form-rounded" type="button">Ok</button>
+            <p>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control form-rounded"
+                        placeholder="Numero de ecuaciones que se evaluaran" aria-label="Recipient's username"
+                        aria-describedby="basic-addon2" id="nvalue">
+                    <div class="input-group-append">
+                        <button class="btn btn-dark  form-rounded" type="button">Ok</button>
+                    </div>
                 </div>
-            </div>
         </div>
 
         <div class="container alert alert-primary">
@@ -39,7 +42,36 @@
         </div>
 
         <div class="container alert alert-primary" id="results">
-
+            <table class="table bg-white">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">x</th>
+                        <th scope="col">y</th>
+                        <th scope="col">z</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
