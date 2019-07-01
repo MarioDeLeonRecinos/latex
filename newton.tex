@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+﻿\documentclass[11pt]{article}
 
 \usepackage[margin=1in]{geometry}
 \usepackage{amsfonts, amsmath, amssymb}
@@ -44,13 +44,13 @@
 
 \begin{center}
 %\vspace*{1cm}
-\Large{\textbf{Analisis Numerico}}\\
+\Large{\textbf{Análisis Numérico}}\\
 \Large{\textbf{Proyecto Final}}\\
 \vfill
 \line(1,0){500}\\[1mm]
 
 \huge{\textbf{Método de Newton para sistemas no lineales}}\\[3mm]
-\Large{\textbf{- Implementacion y teoria del metodo -}}\\[1mm]
+\Large{\textbf{- Implementación y teoría del método -}}\\[1mm]
 
 \line(1,0){500}\\
 \vfill
@@ -76,11 +76,11 @@
 
 \section{Definiciones}
 
-El problema computacional que se tiene a resolver es solucion de ecuaciones no lineales, el cual sera resuelto con el metodo de newton para ecuaciones no lineales. Este metodo tiene un procedimiento algoritmico para efectuar la transformacion en una situacion mas general.\\
+El problema computacional que se tiene a resolver es la solución de ecuaciones no lineales, el cual será resuelto con el método de Newton para ecuaciones no lineales. Este método tiene un procedimiento algorítmico para efectuar la transformación en una situación más general.\\
 
-Para construir dicho algoritmo que lleve a una solucion del metodo de punto-fijo en un caso unidimensional, obtuvimos una funcion $\phi$ con las propiedades $$g(x)=x-\phi(x)f(x)$$ da una convergencia cuadratica en el punto fijo $p$ de la funcion $g$.De esta condicion el metodo de Newton evoluciono al escoger $\phi(x)=1/f'(x)$ asumiendo que $f'(x)\neq0$.\\
+Para construir dicho algoritmo que lleve a una solución del método de punto-fijo en un caso unidimensional, obtuvimos una función $\phi$ con las propiedades $$g(x)=x-\phi(x)f(x)$$ que da una convergencia cuadrática en el punto fijo $p$ de la función $g$.De esta condición el método de Newton evolucionó al escoger $\phi(x)=1/f'(x)$ asumiendo que $f'(x)\neq0$.\\
 
-Un enfoque similar in el caso $n$-dimensional implica una matriz
+Un enfoque similar en el caso $n$-dimensional implica una matriz:
 
 \begin{equation}
 A=
@@ -94,9 +94,9 @@ A=
 \end{equation}
 
 
-donde cada una de las entradas $a_{ij}(x)$ es una funcion de $\mathbb{R}^n$ a $\mathbb{R}$ . Esto requiere que $A(x)$ sea encontrado para que $$\mathbf{G(x)=x-A(x)^{-1}F(x)}$$ genere una convergencia cuadratica para la solucion $\mathbf{F(x)=0}$, asumiendo que $A(x)$ es no singular en el punto fijo $\mathbf{p}$ de $\mathbf{G}$.\\
+Donde cada una de las entradas $a_{ij}(x)$ es una función de $\mathbb{R}^n$ a $\mathbb{R}$ . Esto requiere que $A(x)$ sea encontrado para que $$\mathbf{G(x)=x-A(x)^{-1}F(x)}$$ genere una convergencia cuadrática para la solución $\mathbf{F(x)=0}$, asumiendo que $A(x)$ es no singular en el punto fijo $\mathbf{p}$ de $\mathbf{G}$.\\
 
-Suponemos que $p$ es una solucion de $G(x)=x$. Si existe un numero $\delta>0$ con la propiedad que
+Suponemos que $p$ es una solución de $G(x)=x$. Si existe un número $\delta>0$ con la propiedad que:
 
 \begin{enumerate}[label=(\roman*)]
 
@@ -106,12 +106,12 @@ Suponemos que $p$ es una solucion de $G(x)=x$. Si existe un numero $\delta>0$ co
 
 \end{enumerate}
 
-Entonces existe un numero $\hat{\delta}\leq \delta$ tal que la sucesion generada por $x^k=G(x^{k-1})$
-converge cuadraticamente a $p$ para cualquier eleccion de $x^0$ a condicion de que $\quad \norm{x^0-p}<\hat{\delta}$
+Entonces existe un número $\hat{\delta}\leq \delta$ tal que la sucesión generada por $x^k=G(x^{k-1})$
+converge cuadráticamente a $p$ para cualquier elección de $x^0$ a condición de que $\quad \norm{x^0-p}<\hat{\delta}$
 \begin{center}
 $\quad \norm{x^k-p}_\infty \leq \frac{n^2M}{2}\quad \norm{x^{k-1}-p}_\infty^2$ para toda k$\geq 1$
 \end{center}
-Para utilizar el teorema supongamos que $A(x)$ es una matriz de $n X n$ de funcio­nes de $\mathbb{R}^n$ a $\mathbb{R}$ en la forma de la ecuacion \ref{matrix:A}, cuyos elementos específicos se escoge­rán más adelante. Supongamos además que $A(x)$ es no singular cerca de una solución $p$ de $F(x)=O$ , y denotemos con $b_{ij}(x)$ el elemento de $A(x)^{-1}$ en el i-ésimo renglón y en la j-ésima columna.
+Para utilizar el teorema supongamos que $A(x)$ es una matriz de $n X n$ de funciones de $\mathbb{R}^n$ a $\mathbb{R}$ en la forma de la ecuación \ref{matrix:A}, cuyos elementos específicos se escogerán más adelante. Supongamos además que $A(x)$ es no singular cerca de una solución $p$ de $F(x)=O$ , y denotemos con $b_{ij}(x)$ el elemento de $A(x)^{-1}$ en el i-ésimo renglón y en la j-ésima columna.
 
 \begin{table}[H]
 	\centering
@@ -125,56 +125,56 @@ Para utilizar el teorema supongamos que $A(x)$ es una matriz de $n X n$ de funci
 
 
 \section{Desarrollo del programa}
-Este programa fue desarrolado con la intención que permita resolver sistemas de ecuaciones no lineales de manera numerica usando el metodo de Newton adaptado para estos tipos de sistemas. Estos sistemas son un conjunto de ecuaciones no lineales que tienen multiples variables y describen fenomenos bastante complejos como lo podrian ser los que se simulan por computadora. 
+Este programa fue desarrollado con la intención de permitir resolver sistemas de ecuaciones no lineales, de manera numérica, usando el método de Newton adaptado para estos tipos de sistemas. Estos sistemas son un conjunto de ecuaciones no lineales que tienen múltiples variables y describen fenómenos bastante complejos como los simulados por computadora.
 
 \subsection{Algoritmo}
-El algoritmo que utilizamos en este caso fue el  método de Newton adaptado para trabajar con sistemas no lineasles de $n$ funciones y $n$ variables que mapean $\mathbb{R}^3$ a $\mathbb{R}^3$ de forma iterativa. Como ya se mensiono en esta forma el metodo de Newton debe trabajar para resolver varias ecuaciones con varias incognitas es decir un sistema de ecuaciones, la caracteristica de este sistema esta vez es que es uno no linal por lo que los metodos combencionales para resolver SEL resultan no utiles. A consecuencia de esto se necesita otro tipo de método. Uno de los candidatos es el método de Newton, sin embargo este metodo esta definido para una variable y se deduce de un polinomio de series de potencias, un polinomio de taylor de segundo grado para ser precisos. Por lo que este metodo no puede aplicarse directamente al sistema y  necesita ser adaptado. Descrinimos los cambios de forma general a continuación.\\
+El algoritmo que utilizamos en este caso fue el  método de Newton adaptado para trabajar con sistemas no lineales de $n$ funciones y $n$ variables que mapean $\mathbb{R}^3$ a $\mathbb{R}^3$ de forma iterativa. Como ya se mencionó en esta forma, el método de Newton debe trabajar para resolver varias ecuaciones con varias incógnitas es decir, un sistema de ecuaciones. La característica principal de este sistema es ser no lineal, por lo que los métodos convencionales para resolver el SEL resultan ser no útiles. A consecuencia de esto se necesita otro tipo de método. Uno de los candidatos es el método de Newton, sin embargo este método esta definido para una variable y se deduce de un polinomio de series de potencias, un polinomio de taylor de segundo grado para ser precisos. Por lo que, este método no puede aplicarse directamente al sistema y necesita ser adaptado. Describimos los cambios de forma general a continuación.\\
 
-Si recordamos la forma unidemencional del metodo de Newton:\\
+Si recordamos la forma unidimensional del método de Newton:\\
 \begin{center}
 $x_{k+1} = x_{k} + \frac{f(x_{k})}{f^\prime(x_{k})} \label{eq:1}$\\
 \end{center}
 
-Se observa que cada iteracion esta dada por el valor resultante de la iteración anterior o del valor inicial mas la función evaluada en ese mismo punto dividido entre la derivada de la función evaluada en ese mismo punto nuevamente. El primer cambio necesario para usar el método de Newton en un sistema no lineal es definirlo de forma matricial, esto se logra desarrollando una aproximacion por polinomio de taylor de grado 2 a la función $f(x_{0},x_{1},x_{3},...x_{n})$. De este ultimo pilinomio agrupamos todas las derivadas parciales y las convertimos a una forma matricial generado asi la matriz Jacobiana que al invertirla  juega el mismo papel que la derivada de la función para el caso unidimensional o el metodo de Newton sin adaptar. El siguiente cambio importante es que ya no se itera sobre un punto si no sobre dos vectores columna, el primero que contiene las coordenadas del punto de la iteracion anterior o de la inicial y el segundo es un vector con las coordenadas imagenes de $f(x_{n})$.\\
-El metodo adaptado para resolver sistemas de ecuaciones no lineales aun posee una forma y caracteristicas similares a la su forma inicial. La diferencia radica en que el metodo generalizado no trabaja iterando sobre $\mathbb{R}$ para encontrar la raiz de $f$ sino que este itera sobre un campo vectorial de $\mathbb{R}^n$ definido por las $n$ funciones que necesita resolver. En otras palabras el metodo retorna como respuesta un vector columna con las soluciones o el vector solución.\\
+Se observa que cada iteración está dada por el valor resultante de la iteración anterior o del valor inicial, más la función evaluada en ese mismo punto, dividido entre la derivada de la función evaluada en ese mismo punto nuevamente. El primer cambio necesario para usar el método de Newton en un sistema no lineal es definirlo de forma matricial, esto se logra desarrollando una aproximación por polinomio de taylor de grado 2 a la función $f(x_{0},x_{1},x_{3},...x_{n})$. De este último polinomio agrupamos todas las derivadas parciales y las convertimos a una forma matricial, generando así la matriz Jacobiana que al invertirla juega el mismo papel que la derivada de la función para el caso unidimensional o el método de Newton sin adaptar. El siguiente cambio importante, es que ya no se itera sobre un punto si no sobre dos vectores columna, el primero que contiene las coordenadas del punto de la iteración anterior o de la inicial y el segundo es un vector con las coordenadas imágenes de $f(x_{n})$.\\
+El método adaptado para resolver sistemas de ecuaciones no lineales aún posee una forma y características similares a la de su forma inicial. La diferencia radica en que el método generalizado no trabaja iterando sobre $\mathbb{R}$ para encontrar la raíz de $f$ sino que este itera sobre un campo vectorial de $\mathbb{R}^n$ definido por las $n$ funciones que necesita resolver. En otras palabras el método retorna como respuesta un vector columna con las soluciones o el vector solución.\\
 
-Forma generarizada del metodo de Newton.
+Forma generarizada del método de Newton.
  
 \begin{center}
 $\bar{X}_{k+1} = \bar{X}_{k} + {J(\bar{X})}^{-1}F(\bar{X})  \label{eq:2}$
 \end{center}
 
-Pero para este caso el papel de la derivada lo juega la matriz de derivadas parciales de cada funcion es decir la matriz jacobiana que nos permite maperar  $\mathbb{R}^3$ a $\mathbb{R}^3$ y en lugar iterar sobre un punto $x$ de $\mathbb{R}$  ahora iteramos en el vector $\bar{X}$. 
+Pero para este caso el papel de la derivada lo juega la matriz de derivadas parciales de cada función, es decir, la matriz Jacobiana que nos permite mapear  $\mathbb{R}^3$ a $\mathbb{R}^3$ y en lugar iterar sobre un punto $x$ de $\mathbb{R}$  ahora iteramos en el vector $\bar{X}$. 
 
-Desafortunadamente el cálculo de una matriz Jacobiana luego deve ser invertido y el calculo de una matriz inversa resulta demaciado costoso en terminos de procesamiento por lo que se opto por usar una forma alternativa método que genera un SEL al final el cual es mucho mas rapido de resolver\\
+Desafortunadamente, el cálculo de una matriz Jacobiana luego debe ser invertido y el cálculo de una matriz inversa resulta demasiado costoso en términos de procesamiento por lo que se optó por usar una forma alternativa al método que genera un SEL al final el cual, es mucho más rápido de resolver\\
 
 \begin{center}
 $J(\bar{X}_{k})y = -F(\bar{X}_{k}) $
 \end{center}
 
-Siendo $y$ un vector que satisfaga la igualdad, es de la necesidad de hayar las coordenadas de ese vector de donde se origina el SEL previamente mencionado. Finalmente la respuesta para esa iteracion sera la suma del vector $\bar{X}$ y el vector $y$
+Siendo $y$ un vector que satisfaga la igualdad, es de la necesidad de encontrar las coordenadas de ese vector de donde se origina el SEL previamente mencionado. Finalmente la respuesta para esa iteración será la suma del vector $\bar{X}$ y el vector $y$
 
 
 \subsection{Pseudocódigo}
-El Pseudocódigo para el proyecto se divide en 3 bloques principales de codigo:
+El Pseudocódigo para el proyecto se divide en 3 bloques principales de código:
 \begin{enumerate}
-  \item Configuración de parametros
+  \item Configuración de parámetros
   \item Bucle
   \item Salida
 \end{enumerate}
 
-\subsubsection{Configuración de parametros}
-Durante la configuración de parametros el programa necesita recibir como entrada varias cosas, entre ellas estan el número  $n$ de incognitas y de funciones que se desea calcular, luego la precision deseada que luego servira para saber en que momento detener el programa. Finalmente se necesitaran las ecuaciones que deben ser solucionadas.
+\subsubsection{Configuración de parámetros}
+Durante la configuración de parámetros el programa necesita recibir como entrada varias cosas, entre ellas están: el número  $n$ de incognitas y de funciones que se desea calcular, luego la precisión deseada que luego servirá para saber en que momento detener el programa. Finalmente se necesitarán las ecuaciones que deben ser solucionadas.
 
 \subsubsection{Bucle}
-Esta es la parte computacionalmente mas exigente del programa, en esta parte se necesitan calcular los siguientes valores
+Esta es la parte computacionalmente más exigente del programa, en esta parte se necesitan calcular los siguientes valores:
 \begin{itemize}
-  \item Matris Jacobiana de la iteración
+  \item Matriz Jacobiana de la iteración
   \item El vector $F(\bar{X})$
   \item Un SEL al fin de cada iteración
 \end{itemize}
 \subsubsection{Salida}
-Esta es la parte donde en caso de exito los valores numericos obtenidos en el vector columna se le muestran al suaurio en un formato amigable asi como la tabla con las iteraciones realizadas, o en caso de fallo un mensaje de error y si es posible las tablas de iteracion que el programa haya logrado ejecutar.  
+Esta es la parte donde en caso de éxito, los valores numéricos obtenidos en el vector columna se le muestran al usuario en un formato amigable así como la tabla con las iteraciones realizadas, o en caso de fallo un mensaje de error y si es posible las tablas de iteración que el programa haya logrado ejecutar.  
 %\thispagestyle{empty}
 \clearpage
 \bibliographystyle{plain}
