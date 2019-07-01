@@ -73,11 +73,6 @@
 
 \setcounter{page}{1}
 
-\section{Introduccion}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet sed nunc ac egestas. Vestibulum erat risus, accumsan quis condimentum vel, sollicitudin vel purus. Suspendisse id metus sollicitudin, pulvinar justo non, aliquam nulla. Nam vehicula velit nibh, placerat maximus ligula finibus eu. Morbi molestie lectus ac tortor rhoncus pellentesque. Vestibulum eget nibh ultrices, maximus lacus a, pharetra velit. Mauris laoreet interdum diam vel mattis. Donec vestibulum nibh enim, nec malesuada arcu sodales et. Pellentesque pharetra euismod est, quis faucibus est maximus et. Maecenas feugiat ac tortor id iaculis. Ut commodo ac erat quis finibus\footnote{Ejemplo}.
-\clearpage
-
 \section{Definiciones}
 
 El problema computacional que se tiene a resolver es solucion de ecuaciones no lineales, el cual sera resuelto con el metodo de newton para ecuaciones no lineales. Este metodo tiene un procedimiento algoritmico para efectuar la transformacion en una situacion mas general.\\
@@ -134,13 +129,29 @@ Maecenas at nulla ac est vulputate iaculis. In pulvinar tristique quam nec posue
 
 
 \section{Desarrollo del programa}
+Este programa fue desarrolado con la intención que permita resolver sistemas de ecuaciones no lineales de manera numerica usando el metodo de Newton adaptado para estos tipos de sistemas. Estos sistemas son un conjunto de ecuaciones no lineales que tienen multiples variables y describen fenomenos bastante complejos como lo podrian ser la simulacion por computadora. 
 
 \subsection{Algoritmo}
-sujeto a cambios
-Una vez el método de Newton ha sido adaptado para trabajar con $\mathbb{n}$ funciones y $\mathbb{n}$ variables de forma tal que el  
-sujeto a cambios
-El algoritmo empleado para resolver sistemas de ecuaciones no lineales con el método de Newton aun posee todas sus cualidades es decir la velocidad de convergencia del método no se vio afectada como resultado de adaptarlo al caso donde se ncesita trabajar con un espacio vectorial de funciones que mapeen $\mathbb{R}^3$ a $\mathbb{R}^3$
+El algoritmo de Newton ha sido adaptado para trabajar con $n$ funciones y $n$ variables que mapean $\mathbb{R}^3$ a $\mathbb{R}^3$ de forma iterativa\\
 
+Si recordamos la forma unidemencional del metodo de Newton:\\
+\begin{center}
+$x_{k+1} = x_{k} + \frac{f(x_{k})}{f^\prime(x_{k})} \label{eq:1}$\\
+\end{center}
+
+Se observa que cada iteracion estad dada por el valor resultante de la iteración anterior mas la función evaluada en ese mismo punto dividido entre la derivada de la función evaluada en se mismo punto. El algoritmo empleado para resolver sistemas de ecuaciones no lineales con el método de Newton aun posee una forma y caracteristicas similares. La diferencia radica en que el metodo generalizado no trabaja iterando sobre $\mathbb{R}$ para encontrar la raiz de $f$ sino que este itera sobre un campo vectorial de $\mathbb{R}^n$ definido por las $n$ funciones que necesita resolver. En otras palabras el metodo retorna como respuesta un vector columna con las soluciones o el vector solución.\\
+
+Forma generarizada del metodo de Newton.
+ 
+\begin{center}
+$\bar{X}_{k+1} = \bar{X}_{k} + J(\bar{X})^(-1)F(\bar{X})  \label{eq:2}$
+\end{center}
+
+Pero para este caso el papel de la derivada lo juega la matriz de derivadas parciales de cada funcion es decir la matriz jacobiana que nos permite maperar  $\mathbb{R}^3$ a $\mathbb{R}^3$ y en lugar iterar sobre un punto $x$ de $\mathbb{R}$  ahora iteramos en el vector $\bar{X}$
+
+Desafortunadamente el cálculo de una matriz inversa resulta demaciado costoso por lo que se opto por usar una forma alternativa método que genera un SEL al final el cual es mucho mas rapido de resolver\\
+
+{la formula que le dije a benja aqui }
 
 \subsection{Pseudocódigo}
 El Pseudocódigo para el proyecto se divide en 3 bloques principales de codigo:
@@ -158,10 +169,12 @@ Esta es la parte computacionalmente mas exigente del programa, en esta parte se 
 \begin{itemize}
   \item Matris Jacobiana de la iteración
   \item El vector $F(\bar{X})$
-  \item Salida
+  \item Un SEL al fin de cada iteración
 \end{itemize}
-\clearpage
+\subsubsection{Salida}
+Esta es la parte donde en caso de exito los valores numericos obtenidos en el vector columna se le muestran al suaurio en un formato amigable asi como la tabla con las iteraciones realizadas, o en caso de fallo un mensaje de error y si es posible las tablas de iteracion que el programa haya logrado ejecutar.  
 %\thispagestyle{empty}
+\clearpage
 \bibliographystyle{plain}
 \nocite{*}
 \bibliography{bibliografia}
