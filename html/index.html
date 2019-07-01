@@ -33,68 +33,71 @@
         </div>
 
         <div class="container alert alert-primary">
-            <div class="input-group mb-3" id="equations">
-                <input type="text" placeholder="equacion" class="form-control form-rounded"
-                    aria-label="Text input with segmented dropdown button">
-            </div>
-            <div class="d-inline mb-2"><b class=" w-75">Tolerancia 10^-</b></div>
-            <input id="tol" class="mb-2 form-control form-rounded w-25 d-inline" placeholder="15" type="number">
-            <button class="btn btn-dark form-rounded" type="button" id="exec">Resolver</button>
+            <p>
+                <div class="mb-3" id="equations">
+                    <input type="text" placeholder="equacion" class="mb-2 form-control form-rounded"
+                        aria-label="Text input with segmented dropdown button">
+                    <input type="text" placeholder="equacion" class="form-control form-rounded"
+                        aria-label="Text input with segmented dropdown button">
+                </div>
+                <div class="d-inline"><b>Tolerancia 10^-</b></div>
+                <input id="tol" class="form-control form-rounded w-25 d-inline" placeholder="15" type="number">
+                <button class="mb-1 btn btn-dark form-rounded d-inline" type="button" id="exec">Resolver</button>
         </div>
 
         <div class="container alert alert-primary" id="results">
-            <table class="table bg-white">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">x</th>
-                        <th scope="col">y</th>
-                        <th scope="col">z</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>3</td>
-                        <td>2</td>
-                        <td>1</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="text-dark" id="pretty">$$$$</div>
-
-            </table>
-        </div>
-        <div class="container alert alert-primary">
-            <div>
-                <table class="table bg-white" id="errors">
+            <p>
+                <table class="table bg-white">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Error Mesagge</th>
+                            <th scope="col">x</th>
+                            <th scope="col">y</th>
+                            <th scope="col">z</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <th scope="row">1</th>
-                            <th>Hola</th>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>1</td>
                         </tr>
                     </tbody>
                 </table>
-            </div>
+                <div class="text-dark" id="pretty">$$$$</div>
+
+        </div>
+        <div class="container alert alert-primary">
+            <p>
+                <div>
+                    <table class="table bg-white" id="errors">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Error Mesagge</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <th>Hola</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
         </div>
 
     </div>
