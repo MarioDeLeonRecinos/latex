@@ -72,17 +72,60 @@
                     </tr>
                 </tbody>
             </table>
+
+            <div class="text-dark" id="pretty">$$$$</div>
+
+            </table>
         </div>
+        <td>
+            <div class="" id="error">$$$$</div>
+            <b>Parenthesis option:</b>
+            <input type="radio" name="parenthesis" value="keep" onclick="parenthesis = 'keep'; expr.oninput();"
+                checked>keep
+            <input type="radio" name="parenthesis" value="auto" onclick="parenthesis = 'auto'; expr.oninput();">auto
+            <input type="radio" name="parenthesis" value="all" onclick="parenthesis = 'all'; expr.oninput();">all
+            <br />
+            <b>Implicit multiplication:</b>
+            <input type="radio" name="implicit" value="hide" onclick="implicit = 'hide'; expr.oninput();" checked>hide
+            <input type="radio" name="implicit" value="show" onclick="implicit = 'show'; expr.oninput();">show
+
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+
+    <script>
+        var expr = ''
+        const pretty = document.getElementById('pretty')
+        let parenthesis = 'keep'
+        let implicit = 'hide'
+        expr = 'sqrt(75 / 3) + det([[-1, 2], [3, 1]]) - sin(pi / 4)^2'
+        pretty.innerHTML = '$$' + math.parse(expr).toTex({ parenthesis: parenthesis }) + '$$'
+        //result.innerHTML = math.format(math.evaluate(expr.value))
+
+        /*expr.oninput = function () {
+            let node = null
+
+            try {
+                // parse the expression
+                node = math.parse(expr.value)
+
+                // evaluate the result of the expression
+                result.innerHTML = math.format(node.compile().evaluate())
+            }
+            catch (err) {
+                result.innerHTML = '<span style="color: red;">' + err.toString() + '</span>'
+            }
+
+            try {
+                // export the expression to LaTeX
+                const latex = node ? node.toTex({ parenthesis: parenthesis, implicit: implicit }) : ''
+                console.log('LaTeX expression:', latex)
+
+                // display and re-render the expression
+                const elem = MathJax.Hub.getAllJax('pretty')[0]
+                MathJax.Hub.Queue(['Text', elem, latex])
+            }
+            catch (err) { }
+        }*/
+    </script>
 </body>
 
 </html>
