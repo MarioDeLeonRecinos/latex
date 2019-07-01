@@ -10,8 +10,12 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Newton No Lineal</title>
 
-    <script src="js/math.js"></script>
-    <script src="js/MathJax.js"></script>
+    <!--<script src="js/math.js"></script>
+    <script src="js/MathJax.js"></script>-->
+    <script src="https://unpkg.com/mathjs@6.0.2/dist/math.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML.js"></script>
+
 
 </head>
 
@@ -33,7 +37,9 @@
         </div>
 
         <div class="container alert alert-primary">
-            <div class="input-group mb-3" id="equations">
+            <div class="mb-3" id="equations">
+                <input type="text" placeholder="equacion" class="mb-2 form-control form-rounded"
+                    aria-label="Text input with segmented dropdown button">
                 <input type="text" placeholder="equacion" class="form-control form-rounded"
                     aria-label="Text input with segmented dropdown button">
             </div>
@@ -71,22 +77,27 @@
                     </tr>
                 </tbody>
             </table>
-
             <div class="text-dark" id="pretty">$$$$</div>
 
-            </table>
         </div>
-        <td>
-            <div class="" id="error">$$$$</div>
-            <b>Parenthesis option:</b>
-            <input type="radio" name="parenthesis" value="keep" onclick="parenthesis = 'keep'; expr.oninput();"
-                checked>keep
-            <input type="radio" name="parenthesis" value="auto" onclick="parenthesis = 'auto'; expr.oninput();">auto
-            <input type="radio" name="parenthesis" value="all" onclick="parenthesis = 'all'; expr.oninput();">all
-            <br />
-            <b>Implicit multiplication:</b>
-            <input type="radio" name="implicit" value="hide" onclick="implicit = 'hide'; expr.oninput();" checked>hide
-            <input type="radio" name="implicit" value="show" onclick="implicit = 'show'; expr.oninput();">show
+        <div class="container alert alert-primary">
+            <div>
+                <table class="table bg-white">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Error Mesagge</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <th>Hola</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
     </div>
 
