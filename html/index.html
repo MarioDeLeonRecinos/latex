@@ -34,7 +34,9 @@
         </div>
 
         <div class="container alert alert-primary">
-            <div class="input-group mb-3" id="equations">
+            <div class="mb-3" id="equations">
+                <input type="text" placeholder="equacion" class="mb-2 form-control form-rounded"
+                    aria-label="Text input with segmented dropdown button">
                 <input type="text" placeholder="equacion" class="form-control form-rounded"
                     aria-label="Text input with segmented dropdown button">
             </div>
@@ -77,17 +79,7 @@
 
             </table>
         </div>
-        <td>
-            <div class="" id="error">$$$$</div>
-            <b>Parenthesis option:</b>
-            <input type="radio" name="parenthesis" value="keep" onclick="parenthesis = 'keep'; expr.oninput();"
-                checked>keep
-            <input type="radio" name="parenthesis" value="auto" onclick="parenthesis = 'auto'; expr.oninput();">auto
-            <input type="radio" name="parenthesis" value="all" onclick="parenthesis = 'all'; expr.oninput();">all
-            <br />
-            <b>Implicit multiplication:</b>
-            <input type="radio" name="implicit" value="hide" onclick="implicit = 'hide'; expr.oninput();" checked>hide
-            <input type="radio" name="implicit" value="show" onclick="implicit = 'show'; expr.oninput();">show
+
 
     </div>
 
