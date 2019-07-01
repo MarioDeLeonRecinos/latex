@@ -76,7 +76,8 @@
 
 \section{Definiciones}
 
-El problema computacional que se tiene a resolver es solucion de ecuaciones no lineales, el cual sera resuelto con el metodo de newton para ecuaciones no lineales. Este metodo tiene un procedimiento algoritmico para efectuar la transformacion en una situacion mas general.\\
+El problema computacional que se intenta resolver es encontrar soluciones para ecuaciones de sistemas no lineales. Las cuales seran resueltas con el metodo de newton adaptado para sistemas no lineales. Este metodo ha sido modificado de tal forma que el algoritmico
+pueda efectuar la transformacion a un sitema de $\mathbb{R}^{n}$ .\\
 
 Para construir dicho algoritmo que lleve a una solucion del metodo de punto-fijo en un caso unidimensional, obtuvimos una funcion $\phi$ con las propiedades $$g(x)=x-\phi(x)f(x)$$ da una convergencia cuadratica en el punto fijo $p$ de la funcion $g$.De esta condicion el metodo de Newton evoluciono al escoger $\phi(x)=1/f'(x)$ asumiendo que $f'(x)\neq0$.\\
 
