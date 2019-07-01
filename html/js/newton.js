@@ -3,23 +3,14 @@ const exp1 = m.parse('x+y*z + ln(2xy)');
 const exp2 = m.parse('2+x^y*z');
 const exp3 = m.parse('e^(2x) + z*y');
 
-function jacobianMatrix(functions, scope) {
-    let jacobian = [];
-    for (let i = 0; i < functions.length; i++) {
-        let row = [];
-        for (let j = 0; j < functions.length; j++){
-            row.push(m.derivative(functions[i], scope[j]).toString());
-        }
-        jacobian.push(row);
-    }
-    return jacobian;
-}
-
 //const mVector = [exp1, exp2, exp3];
 //const jacob = jacobianMatrix(mVector, ['x', 'y', 'z']);
 //console.log(jacob);
 */
 var vectorPrime = [];
+var vectorPrimeCompiled = [];
+var jacobo = [];
+var jacobCompiled = [];
 document.getElementById('start').addEventListener('click', setVariables);
 document.getElementById('exec').addEventListener('click', parseAll);
 
@@ -47,10 +38,45 @@ function parseAll() {
         }
     }
 
-    const pretty = document.getElementById('pretty')
-    let implicit = 'hide'
-    vectorPrime.forEach( e => {
-        pretty.innerHTML = pretty.innerHTML + ' $$' + e.toTex({ parenthesis: 'keep' }) + '$$'
-    });
+    jacobianMatrix(vectorPrime, {x:1, y:2});
+}
 
+function jacobianMatrix(functions, scope) {
+    for (let i = 0; i < functions.length; i++) {
+        let row = [];
+        for (let j = 0; j < functions.length; j++){
+            row.push(m.derivative(functions[i], scope[j]));
+        }
+        jacobo.push(row);
+    }
+}
+
+function jacobian(matrix) {
+    for (let i = 0; i < matrix.length; i++) {
+        let row = [];
+        for (let j = 0; j < matrix[0].length; j++){
+            row.push(matrix[i][j].compile());
+        }
+        jacobCompiled.push(row);
+    }
+    return sample;
+}
+
+function calcJacob(scope){
+    let data = [];
+    for (let i = 0; i < jacobCompiled.length; i++) {
+        let row = [];
+        for (let j = 0; j < jacobCompiled[0].length; j++){
+            row.push(jacobCompiled[i][j].evaluate(scope));
+        }
+        data.push(row);
+    }
+    return data;
+}
+
+function newtonX(vecoctorFun, tol){
+    while(tol < 2) {
+        console.log(calcJacob({x: 1, y: 2}));
+        tol -= 1;
+    }
 }

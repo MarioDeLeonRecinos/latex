@@ -10,12 +10,8 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Newton No Lineal</title>
 
-    <!--<script src="js/math.js"></script>
-    <script src="js/MathJax.js"></script>-->
-    <script src="https://unpkg.com/mathjs@6.0.2/dist/math.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML.js"></script>
-
+    <script src="js/math.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML.js"></script>
 
 </head>
 
@@ -37,9 +33,7 @@
         </div>
 
         <div class="container alert alert-primary">
-            <div class="mb-3" id="equations">
-                <input type="text" placeholder="equacion" class="mb-2 form-control form-rounded"
-                    aria-label="Text input with segmented dropdown button">
+            <div class="input-group mb-3" id="equations">
                 <input type="text" placeholder="equacion" class="form-control form-rounded"
                     aria-label="Text input with segmented dropdown button">
             </div>
@@ -79,8 +73,10 @@
                     </tr>
                 </tbody>
             </table>
+
             <div class="text-dark" id="pretty">$$$$</div>
 
+            </table>
         </div>
         <div class="container alert alert-primary">
             <div>
@@ -104,11 +100,11 @@
     </div>
 
     <script>
-        var expr = ''
-        const pretty = document.getElementById('pretty')
-        let parenthesis = 'keep'
-        let implicit = 'hide'
-        expr = 'sqrt(75 / 3) + det([[-1, 2], [3, 1]]) - sin(pi / 4)^2'
+        var expr = '';
+        const pretty = document.getElementById('pretty');
+        let parenthesis = 'keep';
+        let implicit = 'hide';
+        expr = 'sqrt(75 / 3) + det([[-1, 2], [3, 1]]) - sin(pi / 4)^2';
         pretty.innerHTML = '$$' + math.parse(expr).toTex({ parenthesis: parenthesis }) + '$$'
         //result.innerHTML = math.format(math.evaluate(expr.value))
 
