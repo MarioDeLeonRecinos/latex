@@ -1,11 +1,8 @@
 /*
-const exp1 = m.parse('x+y*z + ln(2xy)');
-const exp2 = m.parse('2+x^y*z');
-const exp3 = m.parse('e^(2x) + z*y');
-
-//const mVector = [exp1, exp2, exp3];
-//const jacob = jacobianMatrix(mVector, ['x', 'y', 'z']);
-//console.log(jacob);
+to test use 
+3x-cos(yz)-0.5
+x^2-81(y+0.1)^2+sin(z)+1.06
+e^(-xy)+20z+(10pi-3)/3
 */
 var vectorPrime = [];
 var vectorPrimeCompiled = [];
@@ -21,6 +18,7 @@ function setVariables() {
     for (let x = 0; x < nval; x++) {
         let obj = document.createElement('input');
         obj.type = "text";
+        obj.placeholder = 'equacion';
         obj.classList.add('form-control', 'form-rounded', 'eqsubmit');
         divlist.appendChild(obj);
     }
@@ -38,14 +36,17 @@ function parseAll() {
         }
     }
 
-    jacobianMatrix(vectorPrime, {x:1, y:2});
+    jacobianMatrix(vectorPrime, ['x', 'y', 'z']);
+    jacobian(jacobo);
+    const xd = calcJacob({x:0.1, y:0.1, z:-0.1});
+    console.log(xd);
 }
 
 function jacobianMatrix(functions, scope) {
     for (let i = 0; i < functions.length; i++) {
         let row = [];
         for (let j = 0; j < functions.length; j++){
-            row.push(m.derivative(functions[i], scope[j]));
+            row.push(math.derivative(functions[i], scope[j]));
         }
         jacobo.push(row);
     }
@@ -59,7 +60,6 @@ function jacobian(matrix) {
         }
         jacobCompiled.push(row);
     }
-    return sample;
 }
 
 function calcJacob(scope){
