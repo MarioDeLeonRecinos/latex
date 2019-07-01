@@ -128,14 +128,15 @@ Para utilizar el teorema supongamos que $A(x)$ es una matriz de $n X n$ de funci
 Este programa fue desarrolado con la intención que permita resolver sistemas de ecuaciones no lineales de manera numerica usando el metodo de Newton adaptado para estos tipos de sistemas. Estos sistemas son un conjunto de ecuaciones no lineales que tienen multiples variables y describen fenomenos bastante complejos como lo podrian ser la simulacion por computadora. 
 
 \subsection{Algoritmo}
-El algoritmo de Newton ha sido adaptado para trabajar con $n$ funciones y $n$ variables que mapean $\mathbb{R}^3$ a $\mathbb{R}^3$ de forma iterativa\\
+El algoritmo que utilizamos en este caso fue el  método de Newton adaptado para trabajar con sistemas no lineasles de $n$ funciones y $n$ variables que mapean $\mathbb{R}^3$ a $\mathbb{R}^3$ de forma iterativa. Como ya se mensiono en esta forma el metodo de Newton debe trabajar para resolver varias ecuaciones con varias incognitas es decir un sistema de ecuaciones, la caracteristica de este sistema esta vez es que es uno no linal por lo que los metodos combencionales para resolver SEL resultan no utiles. A consecuencia de esto se necesita otro tipo de método. Uno de los candidatos es el método de Newton, sin embargo este metodo esta definido para una variable y se deduce de un polinomio de series de potencias, un polinomio de taylor de segundo grado para ser precisos. Por lo que este metodo no puede aplicarse directamente al sistema y  necesita ser adaptado. Descrinimos los cambios de forma general a continuación.\\
 
 Si recordamos la forma unidemencional del metodo de Newton:\\
 \begin{center}
 $x_{k+1} = x_{k} + \frac{f(x_{k})}{f^\prime(x_{k})} \label{eq:1}$\\
 \end{center}
 
-Se observa que cada iteracion estad dada por el valor resultante de la iteración anterior mas la función evaluada en ese mismo punto dividido entre la derivada de la función evaluada en se mismo punto. El algoritmo empleado para resolver sistemas de ecuaciones no lineales con el método de Newton aun posee una forma y caracteristicas similares. La diferencia radica en que el metodo generalizado no trabaja iterando sobre $\mathbb{R}$ para encontrar la raiz de $f$ sino que este itera sobre un campo vectorial de $\mathbb{R}^n$ definido por las $n$ funciones que necesita resolver. En otras palabras el metodo retorna como respuesta un vector columna con las soluciones o el vector solución.\\
+Se observa que cada iteracion estad dada por el valor resultante de la iteración anterior o del valor inicial mas la función evaluada en ese mismo punto dividido entre la derivada de la función evaluada en ese mismo punto nuevamente. El primer cambio necesario para usa 
+ El algoritmo empleado para resolver sistemas de ecuaciones no lineales con el método de Newton aun posee una forma y caracteristicas similares. La diferencia radica en que el metodo generalizado no trabaja iterando sobre $\mathbb{R}$ para encontrar la raiz de $f$ sino que este itera sobre un campo vectorial de $\mathbb{R}^n$ definido por las $n$ funciones que necesita resolver. En otras palabras el metodo retorna como respuesta un vector columna con las soluciones o el vector solución.\\
 
 Forma generarizada del metodo de Newton.
  
