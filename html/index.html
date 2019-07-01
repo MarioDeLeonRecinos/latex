@@ -43,6 +43,8 @@
                 <input type="text" placeholder="equacion" class="form-control form-rounded"
                     aria-label="Text input with segmented dropdown button">
             </div>
+            <div class="d-inline mb-2 w-50">Tolerancia 10^</div>
+            <input id="tol" class="mb-2 form-control form-rounded w-25 d-inline" placeholder="15" type="number">
             <button class="btn btn-dark form-rounded" type="button" id="exec">Resolver</button>
         </div>
 
@@ -82,7 +84,7 @@
         </div>
         <div class="container alert alert-primary">
             <div>
-                <table class="table bg-white">
+                <table class="table bg-white" id="errors">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">#</th>
@@ -137,6 +139,7 @@
         }*/
     </script>
     <script src="js/newton.js"></script>
+    <script src="js/latex.js"></script>
 </body>
 
 </html>
