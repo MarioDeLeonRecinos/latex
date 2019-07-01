@@ -19,13 +19,15 @@ function jacobianMatrix(functions, scope) {
 //const jacob = jacobianMatrix(mVector, ['x', 'y', 'z']);
 //console.log(jacob);
 */
+var vectorPrime = [];
 document.getElementById('start').addEventListener('click', setVariables);
+document.getElementById('exec').addEventListener('click', parseAll);
 
-function setVariables(){
+function setVariables() {
     const nval = document.getElementById('nvalue').value;
     const divlist = document.getElementById('equations');
     console.log('xd');
-    for(let x = 0; x < nval ; x++){
+    for (let x = 0; x < nval; x++) {
         let obj = document.createElement('input');
         obj.type = "text";
         obj.classList.add('form-control', 'form-rounded', 'eqsubmit');
@@ -33,9 +35,22 @@ function setVariables(){
     }
 }
 
-function parseAll(){
+function parseAll() {
     const eqs = document.getElementsByClassName('eqsubmit');
-    eqs.forEach( e => {
-        e.value()
+    console.log(eqs);
+    for(let x = 0; x < eqs.length; x++) {
+        try {
+            const eq = math.parse(eqs[x].value);
+            vectorPrime.push(eq);
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    const pretty = document.getElementById('pretty')
+    let implicit = 'hide'
+    vectorPrime.forEach( e => {
+        pretty.innerHTML = pretty.innerHTML + ' $$' + e.toTex({ parenthesis: 'keep' }) + '$$'
     });
+
 }
