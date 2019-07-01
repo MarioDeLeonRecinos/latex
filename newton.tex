@@ -100,10 +100,10 @@ Suponemos que $p$ es una solucion de $G(x)=x$. Si existe un numero $\delta>0$ co
 
 \begin{enumerate}[label=(\roman*)]
 
-	\item $\partial g_i / \partial x_j$ sea continua en $N_\delta=x|\quad \norm{x-p}$ para toda $i=1,2,...,n$ y toda $j=1,2,...,n;$
+	\item $\partial g_i / \partial x_j$ sea continua en $N_\delta=x|\quad \norm{x-p}$ para toda $i=1,2,...,n$ y toda $j=1,2,///,n;$
 	\item $\partial^2 g_i(x) / \partial x_j\partial x_k$ sea continua y $\abs{ \partial^2 g_i(x)/(\partial x_j\partial x_k)}\leq M$ para alguna constante M siempre que $x\in N_\delta$ para toda $i=1,2,...,n, j=1,2,...,n$ y toda $k=1,2,...,n;$ 
 	\item $\partial g_i(p) /\partial x_k =0$ para toda $i=1,2,...,n$ y toda $k=1,2,...,n.$
-\label{tem:teorema}
+
 \end{enumerate}
 
 Entonces existe un numero $\hat{\delta}\leq \delta$ tal que la sucesion generada por $x^k=G(x^{k-1})$
@@ -113,74 +113,19 @@ $\quad \norm{x^k-p}_\infty \leq \frac{n^2M}{2}\quad \norm{x^{k-1}-p}_\infty^2$ p
 \end{center}
 Para utilizar el teorema supongamos que $A(x)$ es una matriz de $n X n$ de funcio­nes de $\mathbb{R}^n$ a $\mathbb{R}$ en la forma de la ecuacion \ref{matrix:A}, cuyos elementos específicos se escoge­rán más adelante. Supongamos además que $A(x)$ es no singular cerca de una solución $p$ de $F(x)=O$ , y denotemos con $b_{ij}(x)$ el elemento de $A(x)^{-1}$ en el i-ésimo renglón y en la j-ésima columna.
 
-Dado que $G(x)=x-A(x)^{-1}F(x)$, tenemos $g_i(x)=x_i-\sum_{j=1}^{n}b_{ij}(x)f_{j}(x)$
-\begin{equation}
-    \centering
-    \includegraphics[scale=1.0]{jacobianos}
-\end{equation}
-
-El teorema que se menciono anteriormente implica que necesitamos $\partial g_i(p)/\partial x_k$ para toda $i=1,2,...,n$ y toda $k=1,2,...,n$. Esto significa que, para toda $i=k$,
-
-$$0=1-\sum_{j=1}^{n}b_{ij}(p){\frac{\partial f_{j}}{\partial x_{i}}(p)},$$
-por lo que
-\begin{equation}
-\sum_{j=1}^{n}b_{ij}(p){\frac{\partial f_{j}}{\partial x_{i}}(p)}=1
-\label{eq:sindespejar}
-\end{equation}
-
-\qquad Cuando $k\neq1$
+\begin{table}[H]
+	\centering
+		\begin{tabular}{|c|c|c|c|}\hline
+		$x$ &0&1&2\\ \hline
+		$f(x)$ &3&6&9\\ \hline		
+		\end{tabular}
+	\caption{Caption goes here}
+	\label{tab:data1}
+\end{table}
 
 
-$$0=-\sum_{j=1}^{n}b_{ij}(p){\frac{\partial f_{j}}{\partial x_{i}}(p)}$$
-
-por lo que 
-\begin{equation}
-\sum_{j=1}^{n}b_{ij}(p){\frac{\partial f_{j}}{\partial x_{i}}(p)}=0
-\label{eq:despejada}
-\end{equation}
-Al definir la matriz $J(x)$ por medio de
-\begin{equation}
-J=
-\begin{bmatrix}
-    \frac{\partial f_1}{\partial x_1}(x)       & \frac{\partial f_1}{\partial x_2}(x)       & \dots & \frac{\partial f_1}{\partial x_n}(x)       \\
-    \frac{\partial f_2}{\partial x_1}(x)             & \frac{\partial f_2}{\partial x_2}(x)       & \dots & \frac{\partial f_2}{\partial x_n}(x)       \\
-    \vdots & \vdots & \ddots  & \vdots\\
-    \frac{\partial f_n}{\partial x_1}(x)             & \frac{\partial f_n}{\partial x_2}(x)       & \dots & \frac{\partial f_n}{\partial x_n}(x)      
-    \label{matrix:J}    
-\end{bmatrix}
-\end{equation}
-vemos que las condiciones de las ecuacions (\ref{eq:sindespejar}) y (\ref{eq:despejada}) 
-requieren $$A(p)^{-1}J(p)=I, \textrm{la matriz identidad},$$por lo que $$A(p)=J(p).$$
-En consecuencia, una eleccion apropiada de $A(x)$ es $A(x)=J(x),$ dado que entonces se cumple la condicion$(iii)$ del teorema.\\
-La funcion $G$ esta definida por $$G(x)=x-{J(x)}^{-1}F(x)$$
-y el procedimiento de la iteracion funcional pasa de seleccionar $x^0$ a generar, para $k\geq 1,$ $$x^k=G(x^{k-1})=x^{k-1}-{J(x^{k-1})}^{-1}F(x^{k-1})$$
-Con esto se concluye que esto es metodo de Newton para sistemas no lineales, y generalmente se espera que de una convergencia cuadratica, siempre y cuando se conozca un valor inicial suficientemente preciso y exista ${J(p)}^{-1}$.\\
-La debilidad de este metodo es que se tiene la necesidad de calcular e invertir la matriz $J(x)$ en cada paso.\\
-Matriz Jacobiana: Es una matriz que está conformada por las derivadas parciales, de primer orden de una función.
-$$
-J=
-\begin{bmatrix}
-    \frac{\partial f_1}{\partial x_1}(x)       & \frac{\partial f_1}{\partial x_2}(x)       & \dots & \frac{\partial f_1}{\partial x_n}(x)       \\
-    \frac{\partial f_2}{\partial x_1}(x)             & \frac{\partial f_2}{\partial x_2}(x)       & \dots & \frac{\partial f_2}{\partial x_n}(x)       \\
-    \vdots & \vdots & \ddots  & \vdots\\
-    \frac{\partial f_n}{\partial x_1}(x)             & \frac{\partial f_n}{\partial x_2}(x)       & \dots & \frac{\partial f_n}{\partial x_n}(x)         
-\end{bmatrix}
-$$
-Campo vectorial es una función vectorial de varias variables en la que a cada punto de su dominio se le asigna el vector correspondiente a una determinada magnitud vectorial que actúa sobre dicho punto.$$F:A\subset\mathbb{R}^n \longrightarrow \mathbb{R}$$ 
-Espacio vectorial es la estructura matemática que se crea a partir de un conjunto no vacío y que cumple con diversos requisitos y propiedades iniciales. Esta estructura surge mediante una operación de suma (interna al conjunto) y una operación de producto entre dicho conjunto y un cuerpo.
-$$\mathbb{R}_n={x_1,x_1,...,x_n},\textrm{ con } x_i\in \mathbb{R}$$
-En $\mathbb{R}_n$, la suma de vectores y el producto por un escalar se definen asi:
-$$\textrm{Sean } u=u_1,u_2,...,u_n \textrm{ y }  v_1,v_2,...,v_n \in \mathbb{R}_n$$
-$$u+v=(u_1+v_1,u_2+v_2,...,u_n+v_n)\in \mathbb{R}_n$$
-$$\alpha v=\alpha v_1,\alpha v_2,...,\alpha v_3 \in \mathbb{R}_n$$
-Vector nulo:Es el vector de coordenadas (0,0). O bien, se define como el vector de longitud o módulo cero. La definición de vector nulo es una convención matemática útil para resolver ecuaciones vectoriales. Juega el papel de elemento neutro para la suma de vectores.\\
-
-Matriz inversa: En matemáticas, en particular en álgebra lineal, una matriz cuadrada A de orden n se dice que es invertible, no singular, no degenerada o regular si existe otra matriz cuadrada de orden n, llamada matriz inversa de $A$ y representada como $A^{-1}$, tal que:
-$$\begin{bmatrix} 1 & 1 \\ 0 & 1 \\ \end{bmatrix}^{-1} = \begin{bmatrix} 1 & -1 \\ 0 & 1 \\ \end{bmatrix}.$$
- ,donde In es la matriz identidad de orden n y el producto utilizado es el producto de matrices usual.\\
- \\El conjunto $\mathbb{R}_n$ es el producto cartesiano $\mathbb{R}x...x\mathbb{R}=\mathbb{R}_n$, cuyos elementos son las n-uplas de números reales $(x_1,...,x_n), x_1 \in \mathbb{R},i=1,...,n$, llamados vectores de n componentes.
 \section{Desarrollo del programa}
-Este programa fue desarrolado con la intención que permita resolver sistemas de ecuaciones no lineales de manera numerica usando el metodo de Newton adaptado para estos tipos de sistemas. Estos sistemas son un conjunto de ecuaciones no lineales que tienen multiples variables y describen fenomenos bastante complejos como lo podrian ser la simulacion por computadora. 
+Este programa fue desarrolado con la intención que permita resolver sistemas de ecuaciones no lineales de manera numerica usando el metodo de Newton adaptado para estos tipos de sistemas. Estos sistemas son un conjunto de ecuaciones no lineales que tienen multiples variables y describen fenomenos bastante complejos como lo podrian ser los que se simulan por computadora. 
 
 \subsection{Algoritmo}
 El algoritmo que utilizamos en este caso fue el  método de Newton adaptado para trabajar con sistemas no lineasles de $n$ funciones y $n$ variables que mapean $\mathbb{R}^3$ a $\mathbb{R}^3$ de forma iterativa. Como ya se mensiono en esta forma el metodo de Newton debe trabajar para resolver varias ecuaciones con varias incognitas es decir un sistema de ecuaciones, la caracteristica de este sistema esta vez es que es uno no linal por lo que los metodos combencionales para resolver SEL resultan no utiles. A consecuencia de esto se necesita otro tipo de método. Uno de los candidatos es el método de Newton, sin embargo este metodo esta definido para una variable y se deduce de un polinomio de series de potencias, un polinomio de taylor de segundo grado para ser precisos. Por lo que este metodo no puede aplicarse directamente al sistema y  necesita ser adaptado. Descrinimos los cambios de forma general a continuación.\\
@@ -190,20 +135,25 @@ Si recordamos la forma unidemencional del metodo de Newton:\\
 $x_{k+1} = x_{k} + \frac{f(x_{k})}{f^\prime(x_{k})} \label{eq:1}$\\
 \end{center}
 
-Se observa que cada iteracion estad dada por el valor resultante de la iteración anterior o del valor inicial mas la función evaluada en ese mismo punto dividido entre la derivada de la función evaluada en ese mismo punto nuevamente. El primer cambio necesario para usa 
- El algoritmo empleado para resolver sistemas de ecuaciones no lineales con el método de Newton aun posee una forma y caracteristicas similares. La diferencia radica en que el metodo generalizado no trabaja iterando sobre $\mathbb{R}$ para encontrar la raiz de $f$ sino que este itera sobre un campo vectorial de $\mathbb{R}^n$ definido por las $n$ funciones que necesita resolver. En otras palabras el metodo retorna como respuesta un vector columna con las soluciones o el vector solución.\\
+Se observa que cada iteracion estad dada por el valor resultante de la iteración anterior o del valor inicial mas la función evaluada en ese mismo punto dividido entre la derivada de la función evaluada en ese mismo punto nuevamente. El primer cambio necesario para usar el método de Newton en un sistema no lineal es definirlo de forma matricial tal, esto se logra desarrollando una aproximacion por polinomio de taylor de grado 2 a la función $f(x_{0},x_{1},x_{3},...x_{n})$. De este ultimo pilinomio agrupamos todas las derivadas parciales y las convertimos una forma matricial generado asi la matriz Jacobiana que al invertirla  juega el mismo papel que la derivada de la función para el caso unidimensional o el metodo de Newton sin adaptar. El siguiente cambio miportante es que ya no se itera sobre un punto si no sobre dos vectores columna, el primero que contiene las coordenadas del punto de la iteracion anterior o de la inicial y el segundo es un vector con las coordenadas imagenes de $f(x_{n})$.\\
+El metodo adaptado para resolver sistemas de ecuaciones no lineales aun posee una forma y caracteristicas similares a la su forma inicial. La diferencia radica en que el metodo generalizado no trabaja iterando sobre $\mathbb{R}$ para encontrar la raiz de $f$ sino que este itera sobre un campo vectorial de $\mathbb{R}^n$ definido por las $n$ funciones que necesita resolver. En otras palabras el metodo retorna como respuesta un vector columna con las soluciones o el vector solución.\\
 
 Forma generarizada del metodo de Newton.
  
 \begin{center}
-$\bar{X}_{k+1} = \bar{X}_{k} + J(\bar{X})^(-1)F(\bar{X})  \label{eq:2}$
+$\bar{X}_{k+1} = \bar{X}_{k} + {J(\bar{X})}^{-1}F(\bar{X})  \label{eq:2}$
 \end{center}
 
-Pero para este caso el papel de la derivada lo juega la matriz de derivadas parciales de cada funcion es decir la matriz jacobiana que nos permite maperar  $\mathbb{R}^3$ a $\mathbb{R}^3$ y en lugar iterar sobre un punto $x$ de $\mathbb{R}$  ahora iteramos en el vector $\bar{X}$
+Pero para este caso el papel de la derivada lo juega la matriz de derivadas parciales de cada funcion es decir la matriz jacobiana que nos permite maperar  $\mathbb{R}^3$ a $\mathbb{R}^3$ y en lugar iterar sobre un punto $x$ de $\mathbb{R}$  ahora iteramos en el vector $\bar{X}$. 
 
-Desafortunadamente el cálculo de una matriz inversa resulta demaciado costoso por lo que se opto por usar una forma alternativa método que genera un SEL al final el cual es mucho mas rapido de resolver\\
+Desafortunadamente el cálculo de una matriz Jacobiana luego deve ser invertido y el calculo de una matriz inversa resulta demaciado costoso en terminos de procesamiento por lo que se opto por usar una forma alternativa método que genera un SEL al final el cual es mucho mas rapido de resolver\\
 
-{la formula que le dije a benja aqui }
+\begin{center}
+$J(\bar{X}_{k})y = -F(\bar{X}_{k}) $
+\end{center}
+
+Siendo $y$ un vector que satisfaga la igualdad, es de la necesidad de hayar las coordenadas de ese vector de donde se origina el SEL previamente mencionado. Finalmente la respuesta para esa iteracion sera la suma del vector $\bar{X}$ y el vector $y$
+
 
 \subsection{Pseudocódigo}
 El Pseudocódigo para el proyecto se divide en 3 bloques principales de codigo:
